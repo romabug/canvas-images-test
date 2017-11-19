@@ -17,7 +17,9 @@
 </head>
 
 <body>
-    <section class="nav-sec">
+  
+    
+     <section class="nav-sec">
         <div class="container nav-bar1">
             <nav class="">
                 <input type="checkbox" id="nav" class="hidden" />
@@ -45,11 +47,11 @@
                     <div class="mybox">
                         <!-- start   -->
                         <div id="adjust-bar" class="dragbar">
-                            <div class="bar1">
+                            <div v-if="show"  class="bar1">
                                 <p>{{ message1 }}</p>
                                 <input id="range-bri" type="range" v-model="message1" min="-51" max="80" value="1" class="horizon">
                             </div>
-                            <div class="bar2">
+                            <div v-if="show"  class="bar2">
                                 <p>{{ message2 }}</p>
                                 <input class="vertical" orient="vertical" type="range" v-model="message2" min="-51" max="160" value="1">
                             </div>
@@ -58,7 +60,7 @@
                         <div class="image-container">
                             <div class="myimg">
                                 <div class="shadow"></div>
-                                <div id="change-img" class="select-img">
+            <div id="change-img" class="select-img" v-if="showlink">
                                     <h2 class="my-text-btn" v-if="show" v-on:click="show = !show">
                 Select a image  
             </h2>
@@ -80,6 +82,11 @@
                 <div class="col-sm-1 col-md-1 col-lg-2  "></div>
             </div>
     </section>
+    
+    
+    
+    
+    
     <footer>
 </footer>
 <script text="text/javascript" src="./js/aaa.js"></script>
