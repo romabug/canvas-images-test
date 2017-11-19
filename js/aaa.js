@@ -6,7 +6,7 @@
             var file = e;
 
             if (file.size > 1 * 1024 * 1024) {
-                alert(" image size not bigger than 1M, pls select a new image");
+                alert(" SIZE TOO BIG");
             } else {
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
@@ -22,7 +22,8 @@
             data: {
                 show: true,
                 imageurl: "",
-                myfile: ""
+                myfile: "",
+                showlink: true
             },
 
             methods: {
@@ -30,6 +31,9 @@
                     this.show = !this.show;
                     var tmp = document.querySelector('#File');
                     readFile(tmp.files[0]);
+
+                    adjustImage.show = true;
+                    this.showlink = false;
 
                 }
             }
@@ -43,7 +47,7 @@
             data: {
                 message1: 'bright',
                 message2: 'contrast',
-                message3: 'file'
+                show: false
             },
 
             watch: {
@@ -69,6 +73,9 @@
 
             }
         })
+
+
+
 
         var myimage = "";
         var mybright = 0;
