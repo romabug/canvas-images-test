@@ -5,8 +5,8 @@
         function readFile(e) {
             var file = e;
 
-            if (file.size > 3 * 1024 * 1024) {
-                alert(" SIZE TOO BIG");
+            if (file.size > 1 * 1024 * 1024) {
+                alert(" image size not bigger than 1M, pls select a new image");
             } else {
                 var reader = new FileReader();
                 reader.readAsDataURL(file);
